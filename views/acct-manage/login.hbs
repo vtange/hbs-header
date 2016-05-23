@@ -32,6 +32,12 @@
 			<button type="submit" class="btn btn-warning btn-lg">Login</button>
 		</form>
 		<hr>
+		{{#if social}}
+		<p>Or Login with <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a></p>
+		<p>Or Login with <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a></p>
+		<p>Or Login with <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a></p>
+		<hr>
+	    {{/if}}
 		<p>Need an account? <a href="/users/signup">Signup</a></p>
 		<p><a href="/users/forgot">Forgot your password?</a></p>
  		<p>Or go back to the <a href="/">Front Page</a>.</p>

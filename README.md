@@ -20,7 +20,10 @@ This module extends your Express app with routes and templates needed to quickly
  partialsDir:["views/partials/","node_modules/basic-login-bar/views/partials/"],
  });
  ...
-  require('hbs-header')(app,session,passport);
+ app.title = "YOUR_PROJECT_NAME";
+ app.social = false;
+ app.use('/users', express.static(__dirname + '/public'));
+ require('hbs-header')(app,session,passport);
  ```
  In your own templates
  ```

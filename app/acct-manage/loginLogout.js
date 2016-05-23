@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
     app.get('/users/login', loginRedundancy, function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.render(path.join(__dirname, "../../views")+'/acct-manage/login', { title : app.title, user : req.user, message: req.flash('loginMessage') }); 
+        res.render(path.join(__dirname, "../../views")+'/acct-manage/login', { title : app.title, social : app.social, user : req.user, message: req.flash('loginMessage') }); 
     });
 
     // process the login form
@@ -28,7 +28,7 @@ module.exports = function(app, passport) {
     app.get('/users/signup', loginRedundancy, function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.render(path.join(__dirname, "../../views")+'/acct-manage/signup', { title : app.title, user : req.user, message: req.flash('signupMessage') });
+        res.render(path.join(__dirname, "../../views")+'/acct-manage/signup', { title : app.title, social : app.social, user : req.user, message: req.flash('signupMessage') });
     });
 
     // process the signup form
@@ -47,6 +47,7 @@ module.exports = function(app, passport) {
     app.get('/users/profile', isLoggedIn, function(req, res) {
         res.render(path.join(__dirname, "../../views")+'/acct-manage/profile', {
 			title : app.title,
+			social : app.social,
             user : req.user // get the user out of session and pass to template
         });
     });
